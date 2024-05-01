@@ -3,6 +3,13 @@
   import icon_chat from "../assets/chat_icon.svg";
   import PillButton from "../components/PillButton.svelte";
   import ProductCard from "../components/ProductCard.svelte";
+
+  import { Consideration } from "$lib/static/consideration";
+  import ConsiderationSection from "../components/ConsiderationSection.svelte";
+  import Footer from "../components/Footer.svelte";
+
+  let considerations = Consideration;
+  let breadcrumbPath = ["Mac", "MacBook Pro", "Buy MacBook Pro"];
 </script>
 
 <div>
@@ -21,7 +28,7 @@
   </div>
 
   <!-- Spotlight -->
-  <div class="pt-14 place-content-center grid">
+  <div class="pt-14 place-content-center grid px-8">
     <h1 class="text-3xl desktop:text-5xl text-center">
       Choose your new MacBook Pro.
     </h1>
@@ -46,4 +53,33 @@
     <ProductCard />
     <ProductCard />
   </div>
+
+  <div>whats in the box // todo</div>
+
+  <section class="mt-11 pt-14 pb-10 mx-8 rounded-xl bg-zinc-50 px-8">
+    <div class="text-center text-2xl">
+      <h3>What to consider when choosing your</h3>
+      <h3>MacBook Pro.</h3>
+    </div>
+
+    <p class="text-center mt-4 text-base">
+      Configure your laptop on the next step.
+    </p>
+
+    <div class="grid gap-10 pt-6 desktop:grid-cols desktop:grid-cols-4">
+      {#each considerations as item}
+        <ConsiderationSection cd={item} />
+      {/each}
+    </div>
+
+    <div class="mt-20 text-xs font-light">
+      <p class="desktop:text-center">Have questions about buying a Mac?</p>
+      <a
+        href="https://www.apple.com/my/shop/buy-mac/macbook-pro#"
+        class="text-blue-600 font-normal">Chat with a Mac Specialist</a
+      >
+    </div>
+  </section>
+
+  <Footer {breadcrumbPath} />
 </div>
