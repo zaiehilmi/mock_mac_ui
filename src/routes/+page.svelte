@@ -75,8 +75,10 @@
       {/each}
     </div>
 
-    <div class="mt-20 text-xs font-light">
-      <p class="desktop:text-center">Have questions about buying a Mac?</p>
+    <div
+      class="mt-20 text-xs font-light flex desktop:text-center gap-1 desktop:justify-center"
+    >
+      <p class="">Have questions about buying a Mac?</p>
       <a
         href="https://www.apple.com/my/shop/buy-mac/macbook-pro#"
         class="text-blue-600 font-normal">Chat with a Mac Specialist</a
