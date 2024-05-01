@@ -38,7 +38,12 @@
 
   <PillButton />
 
-  <div class="px-10 mt-7 flex flex-row justify-center">
+  <div
+    class="px-10 mt-7 grid grid-cols desktop:grid-cols-3 justify-items-center gap-5 desktop:px-80"
+  >
+    <ProductCard />
+    <ProductCard />
+    <ProductCard />
     <ProductCard />
   </div>
 </div>

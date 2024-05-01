@@ -35,7 +35,7 @@
 </script>
 
 <div
-    class="bg-zinc-100 place-content-center grid rounded-xl px-4 max-w-96 pb-8"
+    class="bg-zinc-100 place-content-center grid rounded-xl px-4 max-w-80 pb-8"
 >
     <img
         src={productData.color[0].image}
@@ -52,7 +52,7 @@
 
     <img src={productData.chipsetImage} alt="apple silicon m3 pro" />
 
-    <div class="font-medium text-xl pt-4 leading-6">
+    <div class="font-medium text-xl pt-4 leading-6 desktop:text-2xl">
         <p>{productData.shortSpec.cpu}</p>
         <p>{productData.shortSpec.gpu}</p>
         <p>{productData.shortSpec.ram}</p>
@@ -66,11 +66,11 @@
     </div>
 
     <div class="mt-2">
-        <h3 class="font-medium text-xl pt-4 leading-6">
+        <h3 class="font-medium text-xl pt-4 leading-6 desktop:text-2xl">
             RM {productData.price}
         </h3>
         <p class="mt-3">or</p>
-        <h3 class="font-medium text-xl pt-4 leading-6">
+        <h3 class="font-medium text-xl pt-4 leading-6 desktop:text-2xl">
             RM {productData.installment}/mo. for 24 mo.*
         </h3>
     </div>

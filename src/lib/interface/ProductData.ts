@@ -1,6 +1,6 @@
 export interface ProductData {
     shortSpec: ShortSpec
-    color: deviceColor[]
+    color: DeviceColor[]
     chipsetImage: string
     moreDescription: string[]
     price: string
@@ -14,7 +14,7 @@ interface ShortSpec {
     rom: string
 }
 
-interface deviceColor {
+interface DeviceColor {
     name: string
     image: string
 }
