@@ -3,6 +3,7 @@
     import apple_icon from "../assets/apple_icon.svg";
     import chevron_right_icon from "../assets/chevron_right_icon.svg";
     import { FooterMenu } from "$lib/static/footerMenu";
+    import Todo from "./Todo.svelte";
 
     export var breadcrumbPath: string[];
 </script>
@@ -10,6 +11,7 @@
 <footer class="mt-20 pt-6 pb-2 px-3 bg-zinc-100">
     <!-- foot note -->
     <section></section>
+    <Todo title="foot note" />
 
     <Divider />
 

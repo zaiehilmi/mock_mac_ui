@@ -7,6 +7,7 @@
   import { Consideration } from "$lib/static/consideration";
   import ConsiderationSection from "../components/ConsiderationSection.svelte";
   import Footer from "../components/Footer.svelte";
+  import Todo from "../components/Todo.svelte";
 
   let considerations = Consideration;
   let breadcrumbPath = ["Mac", "MacBook Pro", "Buy MacBook Pro"];
@@ -45,6 +46,8 @@
 
   <PillButton />
 
+  <Todo title="Filter by chip" />
+
   <div
     class="px-10 mt-7 grid grid-cols desktop:grid-cols-3 justify-items-center gap-5 desktop:px-80"
   >
@@ -54,7 +57,7 @@
     <ProductCard />
   </div>
 
-  <div>whats in the box // todo</div>
+  <Todo title="whats in the box" />
 
   <section class="mt-11 pt-14 pb-10 mx-8 rounded-xl bg-zinc-50 px-8">
     <div class="text-center text-2xl">
@@ -80,6 +83,9 @@
       >
     </div>
   </section>
+
+  <Todo title="compare mac models" />
+  <Todo title="apple care+ for mac" />
 
   <Footer {breadcrumbPath} />
 </div>
