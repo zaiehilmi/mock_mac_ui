@@ -1,10 +1,25 @@
-export interface ProductData {
-    shortSpec: ShortSpec
-    color: DeviceColor[]
-    chipsetImage: string
-    moreDescription: string[]
-    price: string
-    installment: string
+export interface ProductListingResponse {
+    briefMoreDescription: string[];
+    chipsetImageUrl: string;
+    colors: DeviceColor[];
+    id: number;
+    installmentPlan: string;
+    price: string;
+}
+
+export interface ProductCustomizationResponse {
+    id: number;
+    imageUrl: string;
+    keyboardLanguage: string[];
+    memory: CustomizationOption[];
+    moreDescription: string[];
+    powerAdapter: CustomizationOption[];
+    productName: string;
+    storage: CustomizationOption[];
+}
+interface CustomizationOption {
+    option: string;
+    price: string;
 }
 
 interface ShortSpec {

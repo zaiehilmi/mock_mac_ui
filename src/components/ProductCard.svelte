@@ -35,7 +35,7 @@
 </script>
 
 <div
-    class="bg-zinc-100 place-content-center grid rounded-xl px-4 max-w-80 pb-8"
+    class="bg-zinc-100 place-content-center grid rounded-xl px-4 max-w-80 desktop:min-w-72 pb-8"
 >
     <img
         src={productData.color[0].image}
@@ -90,9 +90,12 @@
         </div>
     </div>
 
-    <button class="bg-blue-600 py-3 rounded-xl text-white font-light mt-6"
-        >Select</button
+    <a
+        href="/product"
+        class="bg-blue-600 py-3 rounded-xl text-white font-light mt-6 text-center"
     >
+        Select
+    </a>
 
     <div class="mt-9 text-gray-700">
         <h4 class="font-medium text-gray-900">Need a moment?</h4>
