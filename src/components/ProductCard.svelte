@@ -1,12 +1,13 @@
 <script lang="ts">
     import bookmark_icon from "../assets/bookmark_icon.svg";
     import truck_icon from "../assets/truck_icon.svg";
-    import type { ProductData } from "$lib/interface/ProductData";
+    import type { ProductListingResponse } from "$lib/interface/ProductData";
 
-    export let productData: ProductData = {
-        installment: "499.96",
+    export let productData: ProductListingResponse = {
+        id: 99,
+        installmentPlan: "499.96",
         price: "11,999.00",
-        moreDescription: [
+        briefMoreDescription: [
             "16-inch Liquid Retina XDR display",
             "Three Thunderbolt 4 ports, HDMI port, SDXC card slot, headphone jack, MagSafe 3 port",
             "Magic Keyboard with Touch ID",
@@ -19,9 +20,9 @@
             ram: "18GB Unified Memory",
             rom: "512GB SSD Storage",
         },
-        chipsetImage:
+        chipsetImageUrl:
             "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp-m3-pro-icon-202310?wid=51&hei=51&fmt=png-alpha&.v=1697039562659",
-        color: [
+        colors: [
             {
                 name: "Space Black",
                 image: "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1697311054290",
@@ -38,11 +39,11 @@
     class="bg-zinc-100 place-content-center grid rounded-xl px-4 max-w-80 desktop:min-w-72 pb-8"
 >
     <img
-        src={productData.color[0].image}
+        src={productData.colors[0].image}
         alt="macbook pro 14 inch"
         class="w-96 rounded-xl"
     />
-    <p class="text-xs text-gray-600">{productData.color[0].name}</p>
+    <p class="text-xs text-gray-600">{productData.colors[0].name}</p>
 
     <!-- color selection -->
     <div class="py-3 flex gap-4 pl-3">
@@ -50,7 +51,7 @@
         <button class="rounded-full w-6 h-6 bg-neutral-200 active:border-10" />
     </div>
 
-    <img src={productData.chipsetImage} alt="apple silicon m3 pro" />
+    <img src={productData.chipsetImageUrl} alt="apple silicon m3 pro" />
 
     <div class="font-medium text-xl pt-4 leading-6 desktop:text-2xl">
         <p>{productData.shortSpec.cpu}</p>
@@ -60,7 +61,7 @@
     </div>
 
     <div class="font-normal leading-5 max-w-80 mt-4 text-gray-700">
-        {#each productData.moreDescription as item}
+        {#each productData.briefMoreDescription as item}
             <p class="pt-2">{item}</p>
         {/each}
     </div>
@@ -71,7 +72,7 @@
         </h3>
         <p class="mt-3">or</p>
         <h3 class="font-medium text-xl pt-4 leading-6 desktop:text-2xl">
-            RM {productData.installment}/mo. for 24 mo.*
+            RM {productData.installmentPlan}/mo. for 24 mo.*
         </h3>
     </div>
 

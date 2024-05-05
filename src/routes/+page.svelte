@@ -9,9 +9,25 @@
   import Footer from "../components/Footer.svelte";
   import Todo from "../components/Todo.svelte";
   import Ribbon from "../components/ribbon.svelte";
+  import type { ApiResponse } from "$lib/interface/ApiResponse";
+  import type { ProductListingResponse } from "$lib/interface/ProductData";
+  import { onMount } from "svelte";
 
   let considerations = Consideration;
   let breadcrumbPath = ["Mac", "MacBook Pro", "Buy MacBook Pro"];
+  var data: ProductListingResponse[];
+
+  const getAllProduct = async () => {
+    const res = await fetch("http://localhost:8080/getAll");
+
+    const json: ApiResponse<ProductListingResponse[]> = await res.json();
+
+    return json.data;
+  };
+
+  onMount(async () => {
+    data = await getAllProduct();
+  });
 </script>
 
 <div>
@@ -41,10 +57,11 @@
   <div
     class="px-10 mt-7 grid grid-cols desktop:grid-cols-3 justify-items-center gap-5 desktop:px-80"
   >
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
-    <ProductCard />
+    {#if data}
+      {#each data as item}
+        <ProductCard />
+      {/each}
+    {/if}
   </div>
 
   <Todo title="whats in the box" />

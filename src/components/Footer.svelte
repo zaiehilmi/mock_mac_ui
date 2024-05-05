@@ -16,7 +16,9 @@
     <Divider />
 
     <!-- breadcrumb -->
-    <div class="py-3 flex flex-row gap-4 place-items-center text-zinc-500">
+    <div
+        class="py-3 flex flex-row gap-4 place-items-center text-zinc-500 text-wrap"
+    >
         <img src={apple_icon} alt="home" />
 
         {#each breadcrumbPath as path}

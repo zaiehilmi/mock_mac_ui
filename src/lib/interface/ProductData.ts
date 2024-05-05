@@ -5,6 +5,7 @@ export interface ProductListingResponse {
     id: number;
     installmentPlan: string;
     price: string;
+    shortSpec: ShortSpec;
 }
 
 export interface ProductCustomizationResponse {

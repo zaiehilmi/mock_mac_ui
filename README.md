@@ -1,21 +1,16 @@
-# create-svelte
+# Mock MacBook Pro Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Requirements
+| Name | Version | Notes |
+| -- | -- | --| 
+| Node | 18.15.0 | |
+| JVM  | 17 | for the springboot |
 
 ## Developing
+### Step 1: Run RESTful
+use JAR file or Spring project from [Github](https://github.com/zaiehilmi/mock_mac_rest)
 
+### Step 2: Run frontend project
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
@@ -25,6 +20,23 @@ npm run dev
 npm run dev -- --open
 ```
 
+# Demo
+## Database Scheme
+![](/static/database_scheme.png)
+
+## Some screenshots
+### Desktop view
+![](/static/screenshot/desktop1.png)
+![](/static/screenshot/desktop2.png)
+
+### Mobile View
+since I made this website based on mobile-view first fundamental, the dekstop side is unfinished. Anyway, here is the result for mobile view.  
+
+![](/static/screenshot/mobile1.png)
+![](/static/screenshot/mobile2.png)
+
+Terima kasih - Thank you 🚀
+<!-- 
 ## Building
 
 To create a production version of your app:
@@ -35,4 +47,4 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment. -->
